@@ -1,2 +1,19 @@
 // Copy some experiments you made on ruby String and Fixnum objects below !
 // You choose pick 3 methods for String and 3 methods for Fixnum
+
+1.9.3p392 :009 > "test".upcase!
+ => "TEST" 
+1.9.3p392 :010 > "test".strip
+ => "test" 
+1.9.3p392 :011 > "test".bytesize
+ => 4 
+1.9.3p392 :012 > 5.rindex
+NoMethodError: undefined method `rindex' for 5:Fixnum
+	from (irb):12
+	from /usr/local/rvm/rubies/ruby-1.9.3-p392/bin/irb:16:in `<main>'
+1.9.3p392 :013 > 19.lstrip!
+NoMethodError: undefined method `lstrip!' for 19:Fixnum
+	from (irb):13
+	from /usr/local/rvm/rubies/ruby-1.9.3-p392/bin/irb:16:in `<main>'
+1.9.3p392 :014 > 5.odd?
+ => true 
