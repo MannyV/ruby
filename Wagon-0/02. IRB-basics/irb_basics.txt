@@ -1,1 +1,11 @@
 // Copy your irb shell history below !
+1.9.3p392 :007 > my_name = "Manu"
+ => "Manu" 
+1.9.3p392 :008 > def say_hi(n)
+1.9.3p392 :009?>   puts "Hello " + n + "!"
+1.9.3p392 :010?>   end
+ => nil 
+1.9.3p392 :011 > say_hi(my_name)
+Hello Manu!
+ => nil 
+1.9.3p392 :012 > 
