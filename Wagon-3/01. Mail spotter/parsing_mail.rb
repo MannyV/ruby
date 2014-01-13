@@ -1,12 +1,15 @@
-def parse_mail
-  # 1. How do you model the jokes ? Pick up the adequate line
-  $jokes = [["gmail", "you're an average but modern person"],["lewagon", "you're skilled and capable"]] 
-  jokes = "gmail,you're an average but modern person\nlewagon;you're skilled and capable" 
-  JOKES = {"gmail" => "you're an average but modern person", "lewagon" => "you're skilled and capable"}
+def parse_mail(email)
+  jokes = {"gmail" => "you're an average but modern person", "lewagon" => "you're skilled and capable", "wanadoo" => "you're old"}
   
-  # 2. Don't hesitate to add jokes to this poor list..
-  
-  # 3. Now you simply have to code the rest :)
+  parsed_email = /(\w+).(\w+)@(\w+)/.match(email)
+  global_name = email[/[^@]+/]
+
+  name = (parsed_email[1].empty? ? global_name : (parsed_email[1] + " " + parsed_email[2])).capitalize
+  greeting = (jokes[parsed_email[3]].empty? ? "unfortunately we do not know your provider buddy" : jokes[parsed_email[3]] )
+
+  return "Bonjour " + name + ", " + greeting + "!"
 end
 
-parse_mail("boris@lewagon.org") # => "Well done boris, you're skilled and capable"
+puts parse_mail("boris.paillard@lewagon.org") # => "Well done boris, you're skilled and capable"
+
+
