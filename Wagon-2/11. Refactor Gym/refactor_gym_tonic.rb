@@ -8,7 +8,7 @@ def hop_hop_hop(number_of_exercises)
     end
     unless counter != i # Test if reaching the end of the current exercise.
       # Prints message in that case    
-      print 'Encore une fois..' + "\n"
+      print 'Encore une fois.' + "\n"
     end  
     # Reset counter to 0 for the next exercise
     counter = 0
@@ -16,3 +16,13 @@ def hop_hop_hop(number_of_exercises)
 end
 
 hop_hop_hop(6)
+
+
+def hop_hop_hop2(number_of_exercises)
+  (1..number_of_exercises).each do |i|
+    i.times { print "hop! " }
+    puts "Encore une fois." 
+  end
+end
+
+hop_hop_hop2(6)
