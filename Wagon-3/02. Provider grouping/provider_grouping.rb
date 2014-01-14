@@ -1,5 +1,10 @@
-def group_mails( emails ) 
-  # your code goes here
+def group_mails(emails) 
+ h = Hash.new[0]
+  emails.each do |full_adress| 
+  	parsed_email = /(\w+).(\w+)@(\w+)/.match(full_adress)
+  	parsed_email[3]
+
+
 end
 
 users_emails = %w( bob@yahoo.fr 
