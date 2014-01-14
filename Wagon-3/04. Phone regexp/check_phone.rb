@@ -13,7 +13,8 @@
 
 
 def is_valid_phone_number(phone_number)
-  # your code here
+  return true if phone_number.match(/^(0|\+33 )[1-7](( |-|)\d{2}){4}$/)
+  else false
 end
 
 
